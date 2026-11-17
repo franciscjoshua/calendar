@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+@import '@fontsource/instrument-sans/400.css';
+@import '@fontsource/instrument-sans/500.css';
+@import '@fontsource/instrument-sans/600.css';
+@import '@fontsource/instrument-sans/700.css';
+
+/* Dark mode follows a dark class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* The app's font, Instrument Sans, and its light and dark palettes, as CSS variables that every
+   class names by role. */
+:root {
+  font-family: 'Instrument Sans', sans-serif;
+  --bg: #ffffff;
+  --fg: #17171a;
+  --muted-bg: #f2f2f4;
+  --muted-fg: #52525b;
+  /* Filled controls: near-black in light mode, near-white in dark mode */
+  --primary-bg: #1f1f24;
+  --primary-fg: #ffffff;
+  --accent-bg: #e9e9ec;
+  /* The calendar's frame and the faint lines inside it */
+  --frame: #ececef;
+  --line: #f4f4f6;
+  /* The sidebar's cards */
+  --card-bg: #fafafa;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #141417;
+  --fg: #f2f2f4;
+  --muted-bg: #1c1c20;
+  --muted-fg: #b4b4bd;
+  --primary-bg: #f2f2f4;
+  --primary-fg: #141417;
+  --accent-bg: #26262b;
+  --frame: #232328;
+  --line: #1c1c20;
+  --card-bg: #18181b;
+}

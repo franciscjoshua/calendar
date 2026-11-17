@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Custom Calendar</title>
+    <!-- Dark mode: the color scheme toggle's saved choice, or else the system's setting -->
+    <script>
+      ;(function () {
+        let colorScheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        try {
+          const stored = localStorage.getItem('color-scheme')
+          if (stored === 'light' || stored === 'dark') colorScheme = stored
+        } catch (e) {
+          // Storage may be unavailable, as in a sandboxed iframe
+        }
+        document.documentElement.classList.toggle('dark', colorScheme === 'dark')
+      })()
+    </script>
+  </head>
+  <body class="bg-white dark:bg-[#141417]">
+    <div id="root" class="contents"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
